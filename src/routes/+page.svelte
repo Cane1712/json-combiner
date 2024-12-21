@@ -1,6 +1,12 @@
 <script lang="ts">
     let input = $state('{"someFlag":"someValue"}');
-    let json = $derived(JSON.parse(input) ?? {})
+    let json = $derived.by(() => {
+        try {
+            return JSON.parse(input) ?? {};
+        } catch {
+            return {};
+        }
+    })
     let combined = $state({});
 
     function onclick() {
