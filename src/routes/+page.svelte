@@ -19,8 +19,8 @@
 <h1 class="text-2xl flex justify-center mt-8">JSON combiner</h1>
 <div class="grid grid-cols-1 mx-auto grid-col mt-8 justify-items-center">
     <div class="mb-8">
-        <button {onclick} class=" bg-blue-100">Combine JSON</button><br> <br>
-        <button onclick={async (e) => {await navigator.clipboard.writeText(JSON.stringify(combined))}} class="bg-blue-100">Copy JSON</button>
+        <button {onclick} class=" bg-blue-100 w-40">Combine JSON</button><br> <br>
+        <button onclick={async (e) => {await navigator.clipboard.writeText(JSON.stringify(combined))}} class="bg-blue-100 w-40">Copy JSON</button>
     </div>
     <div>
         <!-- <h1 class="text-xl mx-auto">Load JSON</h1><br> -->
@@ -30,6 +30,10 @@
 </div>
 
 <style>
+    /* button {
+        width: 4rem !important;
+    } */
+
     .w {
         width: 30rem
     } 
