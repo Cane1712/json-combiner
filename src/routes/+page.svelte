@@ -7,6 +7,7 @@
         combined = {...combined, ...json}
         input = "{}"
     }
+
 </script>
 
 <h1 class="text-2xl flex justify-center mt-8">JSON combiner</h1>
@@ -15,7 +16,7 @@
         <h1 class="text-xl mx-auto">Load JSON</h1><br>
         <input bind:value={input}  type="text"><br><br>
         <button {onclick} class=" bg-blue-100">Add to selection</button> 
-        <button class="bg-blue-100">Copy JSON</button>
+        <button onclick={async (e) => {await navigator.clipboard.writeText(JSON.stringify(combined))}} class="bg-blue-100">Copy JSON</button>
     </div>
     <br>
 </div>
