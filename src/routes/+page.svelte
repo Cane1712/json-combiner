@@ -16,7 +16,7 @@
     }
 
     async function validateJSON() {
-        const allflags = await fetch("https://clientsettings.roblox.com/v2/settings/application/PCDesktopClient").then(res => res.json());
+        const allflags = await fetch("https://clientsettings.roblox.com/v2/settings/application/PCDesktopClient", {headers: {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246"}}).then(res => res.json());
         button.innerHTML = `Validate JSON (${Object.keys(combined).filter(key => allflags[key] == undefined).length === 0})`
         // return Object.keys(combined).filter(key => allflags[key] == undefined).length === 0;
     }
